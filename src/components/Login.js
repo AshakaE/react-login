@@ -1,14 +1,15 @@
 import React from 'react';
 
 const Login = () => {
+  const [workEmail, setWorkEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [confirmPassword, setConfirmPassword] = React.useState('');
   const [isMember, setIsMember] = React.useState(true);
   const [isReset, setIsReset] = React.useState(true);
 
   const toggleMember = () => {
     setIsMember((prev) => {
       const isMember = !prev;
-
-      // isReset ? setIsReset(false) : setIsReset(true);
       return isMember;
     });
   };
@@ -16,9 +17,30 @@ const Login = () => {
   const toggleReset = () => {
     setIsReset((prev) => {
       const isReset = !prev;
-      // isMember ? setCpassword('default') : setCpassword('');
       return isReset;
     });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let response;
+    if (isMember) {
+      // response = await login({ username, fpassword });
+      if (response.uid) {
+        const token = response.auth_token;
+        const { uid } = response;
+        // localStorage.setItem('user', username);
+        localStorage.setItem('uid', uid);
+        localStorage.setItem('auth', token);
+        // history.push('/dashboard');
+      }
+      if (response.message) {
+        // setError(response.message);
+      }
+    } else {
+      // response = await register({ username, fpassword, cpassword });
+    }
+    return response;
   };
 
   return (
@@ -26,14 +48,18 @@ const Login = () => {
       {isMember && (
         <>
           <div>
+            <h1>Login</h1>
+            <span>Gain access to all work resources</span>
+          </div>
+          <div>
             <label htmlFor="workEmail">
               <div>Work Email</div>
               <input
                 id="workEmail"
                 name="workEmail"
                 type="text"
-                // value={fpassword}
-                // onChange={(e) => setFpassword(e.target.value)}
+                value={workEmail}
+                onChange={(e) => setWorkEmail(e.target.value)}
               />
             </label>
           </div>
@@ -44,11 +70,18 @@ const Login = () => {
                 id="Password"
                 name="Password"
                 type="password"
-                // value={fpassword}
-                // onChange={(e) => setFpassword(e.target.value)}
-                placeholder="**********"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </label>
+          </div>
+          <div>
+            <button type="button" onClick={handleSubmit}>
+              login
+            </button>
+          </div>
+          <div>
+            <button onClick={toggleMember}>forget password</button>
           </div>
         </>
       )}
@@ -56,6 +89,10 @@ const Login = () => {
         <>
           {isReset && (
             <>
+              <div>
+                <h1>Send confirmation link</h1>
+                <span>Gain access to all work resources</span>
+              </div>
               <div>
                 <label htmlFor="Password">
                   <div>Work Email</div>
@@ -70,26 +107,30 @@ const Login = () => {
           {!isReset && (
             <>
               <div>
+                <h1>Reset Password</h1>
+                <span>Gain access to all work resources</span>
+              </div>
+              <div>
                 <label htmlFor="Password">
-                  <div>Work Email</div>
+                  <div>Password*</div>
                   <input
-                    id="cpassword"
-                    name="cpassword"
+                    id="password"
+                    name="password"
                     type="password"
-                    // value={cpassword}
-                    // onChange={(e) => setCpassword(e.target.value)}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </label>
               </div>
               <div>
-                <label htmlFor="Password">
-                  <div>Work Email</div>
+                <label htmlFor="confirmPassword">
+                  <div>Confirm Password*</div>
                   <input
-                    id="cpassword"
-                    name="cpassword"
+                    id="confirmPassword"
+                    name="confirmPassword"
                     type="password"
-                    // value={cpassword}
-                    // onChange={(e) => setCpassword(e.target.value)}
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
                   />
                 </label>
               </div>
@@ -101,9 +142,7 @@ const Login = () => {
         </>
       )}
       <div>
-        <button onClick={toggleMember}>
-          {isMember ? 'Forget password' : 'Back to Sign in'}
-        </button>
+        <span>© 2021 uk-dion group. All rights reserved.</span>
       </div>
     </>
   );
