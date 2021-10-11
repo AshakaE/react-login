@@ -53,4 +53,11 @@ async function reset({ password, confirmPassword }) {
   return response;
 }
 
-export { login, forgot, reset };
+async function signOut() {
+  const response = await fetch('{{erp_production}}/api/employee/logout').then(
+    (response) => response.json(),
+  );
+  return response;
+}
+
+export { login, forgot, reset, signOut };
