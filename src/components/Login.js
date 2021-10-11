@@ -1,14 +1,20 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
+import { login, forgot, reset } from '../assets/utils/auth';
 
 const Login = () => {
+  const history = useHistory();
   const [workEmail, setWorkEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
   const [isMember, setIsMember] = React.useState(true);
+  // const [isForget, setIsForget] = React.useState(true);
   const [isReset, setIsReset] = React.useState(true);
 
-  const toggleMember = () => {
+  const toggleMember = (e) => {
+    // console.log(e.target.value);
     setIsMember((prev) => {
+      localStorage.clear();
       const isMember = !prev;
       return isMember;
     });
@@ -25,20 +31,35 @@ const Login = () => {
     e.preventDefault();
     let response;
     if (isMember) {
-      // response = await login({ username, fpassword });
-      if (response.uid) {
-        const token = response.auth_token;
-        const { uid } = response;
-        // localStorage.setItem('user', username);
-        localStorage.setItem('uid', uid);
+      response = await login({ workEmail, password });
+      console.log(response);
+      if (response.status) {
+        const token = response.access_token;
         localStorage.setItem('auth', token);
-        // history.push('/dashboard');
+        history.push('/dashboard');
       }
+
       if (response.message) {
         // setError(response.message);
       }
-    } else {
-      // response = await register({ username, fpassword, cpassword });
+    }
+    if (!isMember && isReset) {
+      response = await forgot({ workEmail });
+      if (response.message.split(' ').at(-1) === 'invalid.') {
+        console.log(response.message);
+      } else {
+        const token = response.token;
+        localStorage.setItem('auth', token);
+        localStorage.setItem('user', workEmail);
+        toggleReset();
+      }
+    }
+    if (!isMember && !isReset) {
+      response = await reset({ password, confirmPassword });
+      console.log(response);
+      if (response) {
+        history.push('/success');
+      }
     }
     return response;
   };
@@ -57,6 +78,7 @@ const Login = () => {
               <input
                 id="workEmail"
                 name="workEmail"
+                autoComplete="off"
                 type="text"
                 value={workEmail}
                 onChange={(e) => setWorkEmail(e.target.value)}
@@ -94,13 +116,19 @@ const Login = () => {
                 <span>Gain access to all work resources</span>
               </div>
               <div>
-                <label htmlFor="Password">
+                <label htmlFor="Work Email">
                   <div>Work Email</div>
-                  <input id="cpassword" name="cpassword" type="password" />
+                  <input
+                    id="wokEmail"
+                    name="workEmail"
+                    type="workEmail"
+                    value={workEmail}
+                    onChange={(e) => setWorkEmail(e.target.value)}
+                  />
                 </label>
               </div>
               <div>
-                <button onClick={toggleReset}>Send confirmation</button>
+                <button onClick={handleSubmit}>Send confirmation</button>
               </div>
             </>
           )}
@@ -135,7 +163,7 @@ const Login = () => {
                 </label>
               </div>
               <div>
-                <button>Reset Password</button>
+                <button onClick={handleSubmit}>Reset Password</button>
               </div>
             </>
           )}
