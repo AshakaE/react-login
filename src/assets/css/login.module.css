@@ -95,6 +95,14 @@
   @apply w-full mb-8 relative;
 }
 
+.headingSucess {
+  @apply w-full mb-8 relative text-center;
+}
+
+.lock {
+  @apply flex justify-center align-middle w-full mb-10 mt-20;
+}
+
 .headingInfo {
   letter-spacing: 0.02em;
   @apply text-pDark font-bold text-xl mb-2;
@@ -115,8 +123,10 @@
 
 .headingTwo {
   letter-spacing: 0.02em;
-  @apply text-pLight opacity-50 font-medium text-base ;
+  font-size: 17px;
+  @apply text-pLight opacity-50 font-medium;
 }
+
 
 .button {
   @apply w-full bg-pLight text-white h-14 rounded-md hover:bg-pDark duration-150 transition;
