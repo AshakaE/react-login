@@ -19,6 +19,18 @@
   @apply bg-white px-6 flex flex-col items-center py-10 justify-between relative;
 }
 
+.userKey {
+  width: 341px;
+  height: 346px;
+  @apply px-6 flex flex-col items-center py-10 justify-between relative;
+}
+
+.headingKey {
+  width: 100px;
+  height: 100px;
+  @apply px-6 flex flex-col -top-16 right-0 items-center py-10 justify-between absolute lg:hidden;
+}
+
 .userImg {
   width: 121.31px;
   height: 121.31px;
@@ -80,7 +92,7 @@
 }
 
 .heading {
-  @apply w-full mb-8;
+  @apply w-full mb-8 relative;
 }
 
 .headingInfo {

@@ -6,6 +6,7 @@ import mloginpage from '../assets/css/mlogin.module.css';
 import logo from '../assets/images/UK-DION-2.png';
 import userImage from '../assets/images/user.png';
 import medal from '../assets/images/medal.png';
+import key from '../assets/images/Key.png';
 import commas from '../assets/images/Vector.png';
 
 const Login = () => {
@@ -254,36 +255,83 @@ const Login = () => {
           )}
           {!isReset && (
             <>
-              <div>
-                <h1>Reset Password</h1>
-                <span>Gain access to all work resources</span>
-              </div>
-              <div>
-                <label htmlFor="Password">
-                  <div>Password*</div>
-                  <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                </label>
-              </div>
-              <div>
-                <label htmlFor="confirmPassword">
-                  <div>Confirm Password*</div>
-                  <input
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    type="password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                  />
-                </label>
-              </div>
-              <div>
-                <button onClick={handleSubmit}>Reset Password</button>
+              <div className={loginpage.container}>
+                <div className={loginpage.login}>
+                  <div>
+                    <img
+                      className={loginpage.img}
+                      src={logo}
+                      alt="company logo"
+                    />
+                  </div>
+                  <div className={loginpage.params}>
+                    <div className={loginpage.heading}>
+                      <div className={loginpage.headingKey}>
+                        <img src={key} alt="Key" />
+                      </div>
+                      <h1 className={loginpage.headingOne}>Reset Password</h1>
+                      <span className={loginpage.headingTwo}>
+                        Gain access to all work resources
+                      </span>
+                    </div>
+                    <div>
+                      <label htmlFor="Password">
+                        <div className={loginpage.label}>Password*</div>
+                        <input
+                          id="password"
+                          name="password"
+                          type="password"
+                          value={password}
+                          className={loginpage.input}
+                          onChange={(e) => setPassword(e.target.value)}
+                        />
+                      </label>
+                    </div>
+                    <div>
+                      <label htmlFor="confirmPassword">
+                        <div className={loginpage.label}>Confirm Password*</div>
+                        <input
+                          id="confirmPassword"
+                          name="confirmPassword"
+                          type="password"
+                          value={confirmPassword}
+                          className={loginpage.input}
+                          onChange={(e) => setConfirmPassword(e.target.value)}
+                        />
+                      </label>
+                    </div>
+                    <div>
+                      <button
+                        onClick={handleSubmit}
+                        className={loginpage.buttonReset}
+                      >
+                        Reset Password
+                      </button>
+                    </div>
+                  </div>
+                  <div className={loginpage.footer}>
+                    <span>© 2021 uk-dion group. All rights reserved.</span>
+                  </div>
+                </div>
+                <div className={loginpage.info}>
+                  <div className={loginpage.userKey}>
+                    <img src={key} alt="Key" />
+                  </div>
+                  <div className={loginpage.article}>
+                    <div>
+                      <p className={loginpage.quote}>
+                        Add an inspiring and motivational quote here. It can be
+                        business, finance, personal developemt or any kind.
+                      </p>
+                      <span className={loginpage.quoteName}>
+                        -Ifeoluwa Taiwo
+                      </span>
+                    </div>
+                    <div className={loginpage.quoteImage}>
+                      <img src={commas} alt="commas" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </>
           )}
