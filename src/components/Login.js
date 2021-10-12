@@ -14,11 +14,9 @@ const Login = () => {
   const [password, setPassword] = React.useState('');
   const [confirmPassword, setConfirmPassword] = React.useState('');
   const [isMember, setIsMember] = React.useState(true);
-  // const [isForget, setIsForget] = React.useState(true);
   const [isReset, setIsReset] = React.useState(true);
 
-  const toggleMember = (e) => {
-    // console.log(e.target.value);
+  const toggleMember = () => {
     setIsMember((prev) => {
       localStorage.clear();
       const isMember = !prev;
@@ -72,15 +70,15 @@ const Login = () => {
         <>
           <div className={loginpage.container}>
             <div className={loginpage.login}>
-              <div className={mloginpage.marticle}>
+              <div className={mloginpage.article}>
                 <div>
-                  <p className={mloginpage.mquote}>
+                  <p className={mloginpage.quote}>
                     Add an inspiring and motivational quote here. It can be
                     business, finance, personal developemt or any kind.
                   </p>
-                  <span className={mloginpage.mquoteName}>-Ifeoluwa Taiwo</span>
+                  <span className={mloginpage.quoteName}>-Ifeoluwa Taiwo</span>
                 </div>
-                <div className={mloginpage.mquoteImage}>
+                <div className={mloginpage.quoteImage}>
                   <img src={commas} alt="commas" />
                 </div>
               </div>
@@ -174,24 +172,83 @@ const Login = () => {
         <>
           {isReset && (
             <>
-              <div>
-                <h1>Send confirmation link</h1>
-                <span>Gain access to all work resources</span>
-              </div>
-              <div>
-                <label htmlFor="Work Email">
-                  <div>Work Email</div>
-                  <input
-                    id="wokEmail"
-                    name="workEmail"
-                    type="workEmail"
-                    value={workEmail}
-                    onChange={(e) => setWorkEmail(e.target.value)}
-                  />
-                </label>
-              </div>
-              <div>
-                <button onClick={handleSubmit}>Send confirmation</button>
+              <div className={loginpage.container}>
+                <div className={loginpage.login}>
+                  <div>
+                    <img
+                      className={loginpage.img}
+                      src={logo}
+                      alt="company logo"
+                    />
+                  </div>
+                  <div className={loginpage.paramsReset}>
+                    <div className={loginpage.heading}>
+                      <h1 className={loginpage.headingOne}>
+                        Send confirmation link
+                      </h1>
+                      <span className={loginpage.headingTwo}>
+                        Gain access to all work resources
+                      </span>
+                    </div>
+                    <div className={loginpage.inputDiv}>
+                      <label htmlFor="Work Email">
+                        <div className={loginpage.label}>Work Email*</div>
+                        <input
+                          id="wokEmail"
+                          name="workEmail"
+                          type="workEmail"
+                          value={workEmail}
+                          className={loginpage.input}
+                          onChange={(e) => setWorkEmail(e.target.value)}
+                        />
+                      </label>
+                    </div>
+                    <div>
+                      <button
+                        onClick={handleSubmit}
+                        className={loginpage.buttonReset}
+                      >
+                        Send confirmation
+                      </button>
+                    </div>
+                  </div>
+                  <div className={loginpage.footer}>
+                    <span>© 2021 uk-dion group. All rights reserved.</span>
+                  </div>
+                </div>
+                <div className={loginpage.info}>
+                  <div className={loginpage.userInfo}>
+                    <h2 className={loginpage.headingInfo}>
+                      Employee of the month
+                    </h2>
+                    <div className={loginpage.userImg}>
+                      <img src={userImage} alt="user" />
+                    </div>
+                    <div className={loginpage.userName}>
+                      <h3>Gloria Agboifoh</h3>
+                      <p className={loginpage.userTitle}>
+                        Product & Innovation Mgt.
+                      </p>
+                    </div>
+                    <div className={loginpage.medal}>
+                      <img src={medal} alt="medal" />
+                    </div>
+                  </div>
+                  <div className={loginpage.article}>
+                    <div>
+                      <p className={loginpage.quote}>
+                        Add an inspiring and motivational quote here. It can be
+                        business, finance, personal developemt or any kind.
+                      </p>
+                      <span className={loginpage.quoteName}>
+                        -Ifeoluwa Taiwo
+                      </span>
+                    </div>
+                    <div className={loginpage.quoteImage}>
+                      <img src={commas} alt="commas" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </>
           )}

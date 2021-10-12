@@ -3,7 +3,7 @@
 }
 
 .login {
-  @apply w-full lg:w-2/4 flex flex-col items-center lg:items-stretch justify-between pt-14 px-9 min-h-screen;
+  @apply w-full lg:w-2/4 flex flex-col items-center lg:items-stretch justify-between pt-14 md:px-9 min-h-screen;
 }
 
 .info {
@@ -65,6 +65,10 @@
   @apply w-9/12 lg:w-2/5 lg:self-center h-3/4;
 }
 
+.paramsReset {
+  @apply w-9/12 lg:w-2/5 lg:self-center h-3/4 mt-40 lg:mt-0;
+}
+
 .inputDiv {
   @apply w-full;
 }
@@ -104,6 +108,10 @@
 
 .button {
   @apply w-full bg-pLight text-white h-14 rounded-md hover:bg-pDark duration-150 transition;
+}
+
+.buttonReset {
+  @apply w-full bg-pLight text-white h-14 rounded-md hover:bg-pDark duration-150 transition mt-14;
 }
 
 .footer {
