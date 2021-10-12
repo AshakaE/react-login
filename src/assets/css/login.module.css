@@ -1,0 +1,117 @@
+.container {
+  @apply flex m-auto w-full;
+}
+
+.login {
+  @apply w-full lg:w-2/4 flex flex-col items-center lg:items-stretch justify-between pt-14 px-9 min-h-screen;
+}
+
+.info {
+  @apply hidden w-2/4 bg-pDark min-h-screen lg:flex lg:flex-col py-36 items-center justify-between;
+}
+
+.userInfo {
+  width: 341px;
+  height: 346px;
+  box-shadow: 0px 16px 48px rgba(19, 23, 62, 0.25);
+  border-radius: 16px;
+  background: #E5E5E5;
+  @apply bg-white px-6 flex flex-col items-center py-10 justify-between relative;
+}
+
+.userImg {
+  width: 121.31px;
+  height: 121.31px;
+  background: #BABFDE;
+  @apply p-1 rounded-full;
+}
+
+.userTitle {
+  letter-spacing: 0.02em;
+  @apply text-pLight opacity-50 font-light text-base;
+}
+
+.userName {
+  letter-spacing: 0.02em;
+  @apply text-center text-pDark font-bold text-xl mb-2;
+}
+
+.medal {
+  width: 82px;
+  height: 82px;
+  top: 38%;
+  right: -41px;
+  box-shadow: 0px 4px 72px rgba(19, 23, 62, 0.15);
+  @apply bg-white p-3 absolute rounded-md;
+}
+
+.article {
+  @apply w-9/12 relative border-l-4 border-white pl-4;
+}
+
+.quote {
+  width: 340px;
+  @apply break-all text-base text-pMid pb-3 ;
+}
+
+.quoteName {
+  @apply text-white pt-2;
+}
+.quoteImage {
+  @apply absolute opacity-40 right-5 top-10;
+}
+
+.params {
+  @apply w-9/12 lg:w-2/5 lg:self-center h-3/4;
+}
+
+.inputDiv {
+  @apply w-full;
+}
+
+.input {
+  border: 1px solid #505CA4;
+  box-shadow: 0px 2px 24px rgba(80, 92, 164, 0.15);
+  @apply w-full h-14 rounded-md bg-white outline-none px-5;
+}
+
+.heading {
+  @apply w-full mb-8;
+}
+
+.headingInfo {
+  letter-spacing: 0.02em;
+  @apply text-pDark font-bold text-xl mb-2;
+}
+
+.headingOne {
+  letter-spacing: 0.02em;
+  @apply text-pDark font-bold text-2xl mb-2;
+}
+
+.label {
+  @apply py-4;
+}
+
+.option {
+  @apply py-4 text-pLight text-right font-semibold;
+}
+
+.headingTwo {
+  letter-spacing: 0.02em;
+  @apply text-pLight opacity-50 font-medium text-base ;
+}
+
+.button {
+  @apply w-full bg-pLight text-white h-14 rounded-md hover:bg-pDark duration-150 transition;
+}
+
+.footer {
+  opacity: 0.3;
+  @apply w-full pb-9 text-pLight;
+}
+
+.img {
+  width: 60px;
+  height: 60px;
+}
