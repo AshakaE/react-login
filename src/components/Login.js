@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { login, forgot, reset } from '../assets/utils/auth';
 import loginpage from '../assets/css/login.module.css';
+import mloginpage from '../assets/css/mlogin.module.css';
 import logo from '../assets/images/UK-DION-2.png';
 import userImage from '../assets/images/user.png';
 import medal from '../assets/images/medal.png';
@@ -71,6 +72,18 @@ const Login = () => {
         <>
           <div className={loginpage.container}>
             <div className={loginpage.login}>
+              <div className={mloginpage.marticle}>
+                <div>
+                  <p className={mloginpage.mquote}>
+                    Add an inspiring and motivational quote here. It can be
+                    business, finance, personal developemt or any kind.
+                  </p>
+                  <span className={mloginpage.mquoteName}>-Ifeoluwa Taiwo</span>
+                </div>
+                <div className={mloginpage.mquoteImage}>
+                  <img src={commas} alt="commas" />
+                </div>
+              </div>
               <div>
                 <img className={loginpage.img} src={logo} alt="company logo" />
               </div>

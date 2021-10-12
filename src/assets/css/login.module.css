@@ -46,16 +46,16 @@
 }
 
 .article {
-  @apply w-9/12 relative border-l-4 border-white pl-4;
+  @apply w-9/12 relative border-l-4  mb-10 border-white pl-4;
 }
 
 .quote {
-  width: 340px;
-  @apply break-all text-base text-pMid pb-3 ;
+  max-width: 340px;
+  @apply text-base text-pMid pb-3 ;
 }
 
 .quoteName {
-  @apply text-white pt-2;
+  @apply text-white;
 }
 .quoteImage {
   @apply absolute opacity-40 right-5 top-10;
@@ -108,10 +108,11 @@
 
 .footer {
   opacity: 0.3;
-  @apply w-full pb-9 text-pLight;
+  @apply min-w-min lg:w-full pb-9 text-pLight ;
 }
 
 .img {
   width: 60px;
   height: 60px;
+  @apply hidden lg:block;
 }

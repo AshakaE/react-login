@@ -1,0 +1,15 @@
+.marticle {
+  @apply w-9/12 relative border-l-4 border-pDark mb-10  pl-4 lg:hidden;
+}
+
+.mquote {
+  max-width: 340px;
+  @apply text-sm  text-pMid pb-3 ;
+}
+
+.mquoteName {
+  @apply text-white;
+}
+.mquoteImage {
+  @apply absolute opacity-40 right-0  top-12  w-11 h-16;
+}
