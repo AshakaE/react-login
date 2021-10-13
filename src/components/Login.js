@@ -2,10 +2,10 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { login, forgot, reset } from '../assets/utils/auth';
 import loginpage from '../assets/css/login.module.css';
+import medal from '../assets/images/medal.png';
 import logo from '../assets/images/UK-DION-2.png';
 import mloginpage from '../assets/css/mlogin.module.css';
 import userImage from '../assets/images/user.png';
-import medal from '../assets/images/medal.png';
 import key from '../assets/images/Key.png';
 import commas from '../assets/images/Vector.png';
 

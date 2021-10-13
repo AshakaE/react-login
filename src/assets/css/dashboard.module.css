@@ -35,15 +35,15 @@
 }
 
 .listitemHome {
-  @apply w-full hover:bg-dash px-9 py-1 text-white hover:text-pLight transition duration-150
+  @apply w-full hover:bg-dash px-9 py-1 hover:cursor-pointer text-white hover:text-pLight transition duration-150
 }
 
 .listitem {
-  @apply w-full hover:bg-dash px-9 py-1 text-pLight transition duration-150
+  @apply w-full hover:bg-dash px-9 py-1 hover:cursor-pointer text-pLight transition duration-150
 }
 
 .listitemEnd {
-  @apply w-full hover:bg-dash px-9 py-1 text-tred transition duration-150
+  @apply w-full hover:bg-dash px-9 py-1 hover:cursor-pointer text-tred transition duration-150
 }
 
 .img {
@@ -116,7 +116,7 @@
 }
 
 .body {
-  @apply w-3/4 bg-white;
+  @apply w-3/4 flex gap-x-8;
 }
 
 .sidebar {
@@ -141,4 +141,78 @@
 
 .celeb {
   @apply h-full w-12
+}
+
+.welcome {
+  @apply w-3/5 flex flex-col gap-y-8
+}
+
+.weather {
+  @apply bg-white flex justify-between items-center py-4 px-6 rounded-lg h-2/5
+}
+
+.aside {
+  height: 325px;
+  @apply flex flex-col gap-y-8 
+}
+
+.quote {
+  @apply h-3/5 bg-white rounded-lg py-4 px-6
+}
+
+.article {
+  @apply w-9/12 relative mb-10;
+}
+
+.wquote {
+  max-width: 340px;
+  @apply text-pMid pb-3 text-base ;
+}
+
+.quoteName {
+  @apply text-pLight;
+}
+
+.quoteImage {
+  @apply absolute opacity-40 right-0  top-12 sm:w-12 sm:h-16;
+}
+
+.quoteHeader{
+  @apply flex text-tred justify-between items-center mb-2
+}
+
+.time {
+  @apply text-sm opacity-50 text-pLight
+}
+
+.greet {
+  font-size: 20px;
+  line-height: 40px;
+  @apply text-pLight
+}
+
+.greetName {
+ @apply font-semibold
+}
+.achievement {
+  @apply w-2/5 
+}
+
+.medal {
+  @apply absolute left-4 top-9 h-7 w-10
+}
+
+.userInfo {
+  border: 1px solid rgba(80, 92, 164, 0.3);
+  width: 341px;
+  height: 346px;
+  box-shadow: 0px 4px 72px rgba(80, 92, 164, 0.15);
+  border-radius: 16px;
+  background: #E5E5E5;
+  @apply bg-white px-6 flex flex-col items-center py-10 justify-between relative;
+}
+
+.headingInfo {
+  letter-spacing: 0.02em;
+  @apply text-pDark font-bold text-xl mb-2 pl-9;
 }
