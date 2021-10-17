@@ -3,11 +3,12 @@
 }
 
 .panel {
-  @apply bg-pDark w-2/12 min-h-screen flex flex-col items-stretch justify-between pt-8 pb-24;
+  @apply bg-pDark w-2/12 h-screen flex flex-col items-stretch justify-between pt-8 pb-24 fixed;
 }
 
 .box {
-  @apply  w-10/12 min-h-screen flex flex-col p-8 gap-y-10 content-start;
+  @apply w-full min-h-screen flex flex-col p-8 gap-y-10 content-start;
+  padding-left: 340px;
 }
 
 .imgDiv {
@@ -116,11 +117,16 @@
 }
 
 .body {
-  @apply w-3/4 flex gap-x-8;
+  /* height: 96%; */
+  @apply w-full flex flex-col gap-y-8;
+}
+
+.topBody {
+  @apply w-full flex gap-x-8;
 }
 
 .sidebar {
-  @apply w-1/4 flex flex-col gap-y-6;
+  @apply w-1/4 flex flex-col gap-y-8;
 }
 
 .sidebarInfo {
@@ -206,12 +212,103 @@
   border: 1px solid rgba(80, 92, 164, 0.3);
   height: 346px;
   box-shadow: 0px 4px 72px rgba(80, 92, 164, 0.15);
-  border-radius: 16px;
   background: #E5E5E5;
-  @apply bg-white px-6 flex flex-col items-center py-10 justify-between relative;
+  @apply bg-white px-6 flex flex-col items-center py-10 justify-between relative rounded-lg;
 }
 
 .headingInfo {
   letter-spacing: 0.02em;
   @apply text-pDark font-bold text-xl mb-2 pl-9;
+}
+
+.bottomBody {
+  @apply flex flex-col gap-y-8 w-full overflow-y-auto;
+}
+
+.notifications {
+  @apply bg-white rounded-lg w-full p-6;
+}
+
+.notification {
+  @apply flex justify-between items-center py-8;
+}
+
+.notificationsHeader {
+  @apply flex justify-between;
+}
+
+.notificationsHeading {
+  @apply text-xl font-bold text-pLight;
+}
+
+.notificationsAll {
+  @apply text-base font-bold text-pLight;
+}
+
+.noteInfo {
+  @apply w-full;
+}
+
+.noteInfoTitle {
+  @apply flex justify-between text-pLight font-semibold pb-3
+}
+
+.noteInfoUser {
+  @apply font-normal opacity-50;
+}
+
+.noteInfoTime {
+  @apply flex justify-between text-pLight w-full font-normal opacity-50;
+}
+
+.noteInfoTimestamp {
+  @apply flex justify-between w-56
+}
+
+.noteInfoType {
+  color: #0BA759;
+}
+
+.notifier {
+  @apply w-7
+}
+
+.news {
+  @apply bg-white rounded-lg w-full p-6;
+}
+
+.newsHeader {
+  @apply flex justify-between pb-4;
+}
+
+.newsHeading {
+  @apply text-xl font-bold text-pLight
+}
+
+.paginateButtons {
+  @apply flex justify-between w-20
+}
+
+.buttonOne {
+  @apply py-2 px-3 border-pLight border bg-white rounded-md
+}
+
+.buttonTwo {
+  @apply py-2 px-3 border-pLight border bg-pLight rounded-md
+}
+
+.newsBx {
+  @apply flex justify-between
+}
+
+.newsInfo {
+  @apply flex flex-col text-pLight font-semibold pl-3
+}
+
+.newsDiv {
+  @apply flex 
+}
+
+.newsPara {
+  @apply font-normal opacity-50
 }

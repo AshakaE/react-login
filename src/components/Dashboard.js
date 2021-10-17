@@ -12,8 +12,12 @@ import userImage from '../assets/images/user.png';
 import clouds from '../assets/images/clouds.png';
 import userAcc from '../assets/images/Gloria.png';
 import down from '../assets/images/down.png';
+import left from '../assets/images/left.png';
+import right from '../assets/images/right.png';
 import cake from '../assets/images/cake.png';
 import fire from '../assets/images/fire.png';
+import conference from '../assets/images/conference.png';
+import notice from '../assets/images/notice.png';
 
 const Dashboard = () => {
   const history = useHistory();
@@ -82,49 +86,144 @@ const Dashboard = () => {
           </div>
           <div className={dash.main}>
             <div className={dash.body}>
-              <div className={dash.welcome}>
-                <div className={dash.aside}>
-                  <div className={dash.weather}>
-                    <div>
-                      <p className={dash.time}>Monday, 10:38 AM</p>
-                      <p className={dash.greet}>
-                        Good Morning,
-                        <span className={dash.greetName}> Gloria!</span>
-                      </p>
-                    </div>
-                    <img src={clouds} alt="clouds" />
-                  </div>
-                  <div className={dash.quote}>
-                    <div className={dash.quoteHeader}>
-                      <h2>Quote of the day</h2>
-                      <img src={fire} alt="fire" />
-                    </div>
-                    <div className={dash.article}>
+              <div className={dash.topBody}>
+                <div className={dash.welcome}>
+                  <div className={dash.aside}>
+                    <div className={dash.weather}>
                       <div>
-                        <p className={dash.wquote}>
-                          Add an inspiring and motivational quote here. It can
-                          be business, finance, personal developemt or any kind.
+                        <p className={dash.time}>Monday, 10:38 AM</p>
+                        <p className={dash.greet}>
+                          Good Morning,
+                          <span className={dash.greetName}> Gloria!</span>
                         </p>
-                        <span className={dash.quoteName}>-Ifeoluwa Taiwo</span>
+                      </div>
+                      <img src={clouds} alt="clouds" />
+                    </div>
+                    <div className={dash.quote}>
+                      <div className={dash.quoteHeader}>
+                        <h2>Quote of the day</h2>
+                        <img src={fire} alt="fire" />
+                      </div>
+                      <div className={dash.article}>
+                        <div>
+                          <p className={dash.wquote}>
+                            Add an inspiring and motivational quote here. It can
+                            be business, finance, personal developemt or any
+                            kind.
+                          </p>
+                          <span className={dash.quoteName}>
+                            -Ifeoluwa Taiwo
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
+                <div className={dash.achievement}>
+                  <div className={dash.userInfo}>
+                    <h2 className={dash.headingInfo}>Employee of the month</h2>
+                    <div className={loginpage.userImg}>
+                      <img src={userImage} alt="user" />
+                    </div>
+                    <div className={loginpage.userName}>
+                      <h3>Gloria Agboifoh</h3>
+                      <p className={loginpage.userTitle}>
+                        Product & Innovation Mgt.
+                      </p>
+                    </div>
+                    <div className={dash.medal}>
+                      <img src={medal} alt="medal" />
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className={dash.achievement}>
-                <div className={dash.userInfo}>
-                  <h2 className={dash.headingInfo}>Employee of the month</h2>
-                  <div className={loginpage.userImg}>
-                    <img src={userImage} alt="user" />
+              <div className={dash.bottomBody}>
+                <div className={dash.notifications}>
+                  <div className={dash.notificationsHeader}>
+                    <h2 className={dash.notificationsHeading}>Notification</h2>
+                    <p className={dash.notificationsAll}>View all</p>
                   </div>
-                  <div className={loginpage.userName}>
-                    <h3>Gloria Agboifoh</h3>
-                    <p className={loginpage.userTitle}>
-                      Product & Innovation Mgt.
-                    </p>
+                  <div className={dash.notification}>
+                    <div className={dash.notifier}>
+                      <img src={notif} alt="notification" />
+                    </div>
+                    <div className={dash.noteInfo}>
+                      <div className={dash.noteInfoTitle}>
+                        <h2>
+                          Review your supervisor's comments & recommendations
+                        </h2>
+                        <p className={dash.noteInfoUser}>Ifeoluwa Taiwo</p>
+                      </div>
+                      <div className={dash.noteInfoTime}>
+                        <div className={dash.noteInfoTimestamp}>
+                          <p>Friday 21 May</p>
+                          <p>02:34 PM</p>
+                        </div>
+                        <div className={dash.noteInfoType}>
+                          <p>Review</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className={dash.medal}>
-                    <img src={medal} alt="medal" />
+                  <hr className={dash.notifRule} />
+                  <div className={dash.notification}>
+                    <div className={dash.notifier}>
+                      <img src={notif} alt="notification" />
+                    </div>
+                    <div className={dash.noteInfo}>
+                      <div className={dash.noteInfoTitle}>
+                        <h2>
+                          Review your supervisor's comments & recommendations
+                        </h2>
+                        <p className={dash.noteInfoUser}>Ifeoluwa Taiwo</p>
+                      </div>
+                      <div className={dash.noteInfoTime}>
+                        <div className={dash.noteInfoTimestamp}>
+                          <p>Friday 21 May</p>
+                          <p>02:34 PM</p>
+                        </div>
+                        <div className={dash.noteInfoType}>
+                          <p>Review</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className={dash.news}>
+                  <div className={dash.newsHeader}>
+                    <h2 className={dash.newsHeading}>
+                      Latest Announcements & News
+                    </h2>
+                    <div className={dash.paginateButtons}>
+                      <button className={dash.buttonOne}>
+                        <img src={left} alt="left arrow" />
+                      </button>
+                      <button className={dash.buttonTwo}>
+                        <img src={right} alt="right arrow" />
+                      </button>
+                    </div>
+                  </div>
+                  <div className={dash.newsBx}>
+                    <div className={dash.newsDiv}>
+                      <img src={notice} alt="notice" />
+                      <div className={dash.newsInfo}>
+                        <h2>Staff onboarding session</h2>
+                        <p className={dash.newsPara}>
+                          The onboarding session is basically for all new
+                          employees.
+                        </p>
+                      </div>
+                    </div>
+                    <div className={dash.newsDiv}>
+                      <img src={conference} alt="conference" />
+                      <div className={dash.newsInfo}>
+                        <h2>Staff onboarding session</h2>
+                        <p className={dash.newsPara}>
+                          The onboarding session is basically for all new
+                          employees.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -156,7 +255,7 @@ const Dashboard = () => {
                     <img src={userAcc} alt="user" className={dash.celeb} />
                     <div>
                       <p>Ifeoluwa Taiwo</p>
-                      <p>hursday, 20 May</p>
+                      <p>Thursday, 20 May</p>
                     </div>
                   </div>
                 </div>
@@ -187,7 +286,7 @@ const Dashboard = () => {
                     <img src={userAcc} alt="user" className={dash.celeb} />
                     <div>
                       <p>Ifeoluwa Taiwo</p>
-                      <p>hursday, 20 May</p>
+                      <p>Thursday, 20 May</p>
                     </div>
                   </div>
                 </div>
